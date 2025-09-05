@@ -5,6 +5,8 @@ const toggleThemeButton = document.getElementById('toggle-theme-button');
 const body = document.body;
 const colors = ['note-yellow'];
 
+//en la parte de arriba lo que hace es que basicamente toma los elementos que tienen determinado id en el html y los guarda aca en el js como constante
+
 function createNoteElement(text, colorClass) {
     const noteDiv = document.createElement('div');
     noteDiv.classList.add('note', colorClass); 
@@ -89,8 +91,7 @@ addButton.addEventListener('click', () => {
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         const newNote = createNoteElement(noteText, randomColor);
         notesContainer.appendChild(newNote);
-        const newNoteErr = createNoteElement(noteText, randomColor);
-        notesContainer.appendChild(newNoteErr);
+        //se repetia lo de arriba
         noteInput.value = '';
         addButton.disabled = true;
         saveNotes();
