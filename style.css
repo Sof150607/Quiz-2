@@ -8,9 +8,19 @@ body {
 }
 .dark-mode { 
     background-color: #343434; 
-    color: #e6e6e6; 
+    color: #010101; 
     
 }
+
+h1{
+    color: rgb(0, 0, 0);
+}
+
+.dark-mode h1{
+    color: rgb(255, 255, 255);
+}
+
+
 #app-container { 
     max-width: 450px;
     margin: auto; 
@@ -88,7 +98,7 @@ body {
     padding: 8px 12px; 
     border: none; 
     background-color: #333; 
-    color: white; 
+    color: rgb(255, 255, 255); 
     border-radius: 4px; 
     cursor: pointer; 
     float: right; 

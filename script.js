@@ -24,10 +24,11 @@ function createNoteElement(text, colorClass) {
 }
 
 function loadNotes() {
-
+    //intenta cargar las notas
 
     const storedNotes = [];
     console.log(storedNotes);
+    //comprueba si hay notas para ponerlas
     if (storedNotes) {
         const notes = JSON.parse(storedNotes);
         notes.forEach(noteData => {
@@ -51,7 +52,7 @@ noteInput.addEventListener('input', () => {
 });
 
 toggleThemeButton.addEventListener('click', () => {
-    //cambia el texto de el boton de modo claro y oscuro
+    //comprueba si es modo claro o modo oscuro
     body.classList.toggle('dark-mode');
     const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('isDarkMode', isDarkMode);
