@@ -97,7 +97,7 @@ notesContainer.addEventListener('dblclick', (event) => {
         });
     }
 });
-
+  
 addButton.addEventListener('click', () => {
     const noteText = noteInput.value.trim();
     //comprueba que si exista un texto para la nota y adentro del if lo que hace es sacar un color aleatorio para el fondo de la nueva nota
