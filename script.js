@@ -129,11 +129,11 @@ notesContainer.addEventListener('mouseover', (event) => {
 });
 
 notesContainer.addEventListener('mouseout', (event) => {
-    //cuando el mause ya no esta en la nota vuelve al estado original
+    //cuando el mouse ya no esta en la nota vuelve al estado original
     if (event.target.classList.contains('note')) {
         event.target.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
     }
 });
 
 setInitialTheme();
-loadNotes();
+loadNotes(); //aca llama a las funciones para ejecutarlas 
