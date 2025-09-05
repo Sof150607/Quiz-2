@@ -3,11 +3,12 @@ const addButton = document.getElementById('add-note-button');
 const notesContainer = document.getElementById('notes-container');
 const toggleThemeButton = document.getElementById('toggle-theme-button');
 const body = document.body;
-const colors = ['note-yellow'];
+const colors = ['note-yellow', "note-blue", "note-pink" ]; //faltaba azul y rosado
 
 //en la parte de arriba lo que hace es que basicamente toma los elementos que tienen determinado id en el html y los guarda aca en el js como constante
 
 function createNoteElement(text, colorClass) {
+    //aca creo un div de la nota y el boton de eliminar 
     const noteDiv = document.createElement('div');
     noteDiv.classList.add('note', colorClass); 
     noteDiv.textContent = text;
@@ -16,11 +17,15 @@ function createNoteElement(text, colorClass) {
     deleteButton.classList.add('delete-btn');
     deleteButton.textContent = 'x';
 
+    //meto dentro del div el boton de borrar
+
     noteDiv.appendChild(deleteButton);
     return noteDiv;
 }
 
 function loadNotes() {
+
+
     const storedNotes = [];
     console.log(storedNotes);
     if (storedNotes) {
@@ -33,6 +38,7 @@ function loadNotes() {
 }
 
 function setInitialTheme() {
+    //cambia el texto de el boton de modo claro y oscuro
     const isDarkMode = localStorage.getItem('isDarkMode') === 'true';
     if (isDarkMode) {
         body.classList.add('dark-mode');
@@ -45,6 +51,7 @@ noteInput.addEventListener('input', () => {
 });
 
 toggleThemeButton.addEventListener('click', () => {
+    //cambia el texto de el boton de modo claro y oscuro
     body.classList.toggle('dark-mode');
     const isDarkMode = body.classList.contains('dark-mode');
     localStorage.setItem('isDarkMode', isDarkMode);
